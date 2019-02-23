@@ -11,6 +11,7 @@ public abstract class Tile {
 
     public abstract Piece getPiece();
 
+    //  empty tile subclass
     public static final class EmptyTile extends Tile {
 
         EmptyTile(int coordinate) {
@@ -28,6 +29,7 @@ public abstract class Tile {
         }
     }
 
+    //  occupied tile subclass
     public static final class OccupiedTile extends Tile {
 
         Piece pieceOnTile;
