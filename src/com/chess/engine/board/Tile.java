@@ -39,7 +39,7 @@ public abstract class Tile {
     //  empty tile subclass
     public static final class EmptyTile extends Tile {
 
-        EmptyTile(final int coordinate) {
+        private EmptyTile(final int coordinate) {
             super(coordinate);
         }
 
@@ -60,7 +60,7 @@ public abstract class Tile {
         // 'private' - makes it class private; no way to access it outside
         private final Piece pieceOnTile;
 
-        OccupiedTile(int tileCoordinate, Piece pieceOnTile) {
+        private OccupiedTile(int tileCoordinate, Piece pieceOnTile) {
             super(tileCoordinate);
             this.pieceOnTile = pieceOnTile;
         }
