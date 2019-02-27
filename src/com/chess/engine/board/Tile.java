@@ -8,7 +8,7 @@ package com.chess.engine.board;
 
 public abstract class Tile {
 
-    // 'protected' - can only be accessed by subclasses
+    // 'protected' - can only be used/accessed by subclasses
     protected final int tileCoordinate;
 
     private static final Map<Integer, EmptyTile> EMPTY_TILES = createAllPossibleEmptyTiles();
