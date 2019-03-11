@@ -31,6 +31,10 @@ public class Bishop extends Piece {
 
             while (BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
 
+                if (isFirstColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset)) ||
+                    isEighthColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset) {
+                    break;
+                }
                 candidateDestinationCoordinate += candidateCoordinateOffset;
 
                 if(BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
@@ -44,14 +48,20 @@ public class Bishop extends Piece {
                         if(this.pieceAlliance != pieceAlliance) {
                             legalMoves.add(new Move.AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
                         }
+                        break;
                     }
-                    break;
-
                 }
             }
 
         }
 
         return ImmutableList.copyOf(legalMoves);
+    }
+
+    private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset ){
+        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -9 || candidateOffset == 7);
+    }
+    private static boolean isEighthColumnExclusion(final int currentPosition, final int candidateOffset ){
+        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == 9 || candidateOffset == -7);
     }
 }
