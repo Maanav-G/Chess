@@ -7,6 +7,11 @@ public class BoardUtils {
     public static final boolean[] SEVENTH_COLUMN = initColumn(6);
     public static final boolean[] EIGHTH_COLUMN = initColumn(7);
 
+    public static final boolean[] SECOND_ROW = null;
+    public static final boolean[] SEVENTH_ROW = null;
+
+
+
     public static final int NUM_TITLES = 64;
     public static final int NUM_TITLES_PER_ROW = 8;
 
